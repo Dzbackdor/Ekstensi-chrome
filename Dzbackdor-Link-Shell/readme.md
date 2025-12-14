@@ -34,6 +34,5 @@ Chrome extension for managing and quickly accessing your saved links with anchor
 3. Click any anchor to copy URL
 4. Paste anywhere (Ctrl+V / Cmd+V)
 
-**Made with ❤️ Dzbackdor**
 
-*Happy Ethical Hacking*
+*Happy Ethical Hacking | Dzbackdor*
