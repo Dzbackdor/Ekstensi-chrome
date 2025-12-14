@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Link Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>⚙ Shell Settings</h2>
+
+  <!-- Bagian Export/Import -->
+  <section class="import-export">
+    <button id="exportBtn">📥 Export JSON</button>
+    <button id="importBtn">📤 Import JSON</button>
+    <input type="file" id="importFile" accept=".json" style="display: none;">
+  </section>
+
+  <hr>
+
+  <section class="add">
+    <input id="category" placeholder="Category">
+    <input id="text" placeholder="Anchor text (unique)">
+    <input id="url" placeholder="URL">
+    <button id="add">Add</button>
+  </section>
+
+  <hr>
+
+  <section id="data"></section>
+
+  <pre id="log"></pre>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>

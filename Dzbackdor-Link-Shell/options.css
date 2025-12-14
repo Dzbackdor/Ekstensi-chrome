@@ -1,0 +1,103 @@
+body {
+  background: #050814;
+  color: #00f6ff;
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.import-export {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.import-export button {
+  flex: 1;
+  padding: 8px;
+  background: #0e1430;
+  color: #00f6ff;
+  border: 1px solid #00f6ff;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.import-export button:hover {
+  background: #00f6ff22;
+}
+
+section.add, #data {
+  width: 100%;
+}
+
+input, button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px;
+  margin-bottom: 6px;
+  background: #0e1430;
+  color: #00f6ff;
+  border: 1px solid #00f6ff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.row span {
+  flex: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+.category-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.action {
+  cursor: pointer;
+  color: #00f6ff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border: 1px solid #00f6ff55;
+  border-radius: 3px;
+}
+
+.action:hover {
+  background: #00f6ff22;
+}
+
+.delete {
+  color: #ff5555;
+  border-color: #ff555555;
+}
+
+#log {
+  background: #0e1430;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #00f6ff55;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
