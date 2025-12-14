@@ -1,6 +1,17 @@
+:root {
+  --bg-primary: #050814;
+  --bg-secondary: #0e1430;
+  --accent-color: #00f6ff;
+  --text-color: #00f6ff;
+  --success-color: #00ff00;
+  --danger-color: #ff5555;
+  --border-color: rgba(0, 246, 255, 0.33);
+  --hover-bg: rgba(0, 246, 255, 0.15);
+}
+
 body {
-  background: #050814;
-  color: #00f6ff;
+  background: var(--bg-primary);
+  color: var(--text-color);
   font-family: monospace;
   margin: 0;
   padding: 0;
@@ -16,6 +27,12 @@ body {
   margin: 20px auto;
 }
 
+h2 {
+  color: var(--accent-color);
+  margin-top: 0;
+  text-align: center;
+}
+
 .import-export {
   display: flex;
   gap: 10px;
@@ -25,15 +42,77 @@ body {
 .import-export button {
   flex: 1;
   padding: 8px;
-  background: #0e1430;
-  color: #00f6ff;
-  border: 1px solid #00f6ff;
+  background: var(--bg-secondary);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
   cursor: pointer;
   font-family: monospace;
+  transition: all 0.2s ease;
 }
 
 .import-export button:hover {
-  background: #00f6ff22;
+  background: var(--hover-bg);
+}
+
+/* Theme Selector */
+.theme-selector, .effect-selector {
+  margin-bottom: 15px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.theme-selector h3, .effect-selector h3 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* Theme Options - 4 tombol dalam 2 kolom */
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+/* Effect Options - 6 tombol dalam 3 kolom */
+.effect-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.theme-btn, .effect-btn {
+  padding: 8px 6px;
+  font-size: 11px;
+  cursor: pointer;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-family: monospace;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.theme-btn:hover, .effect-btn:hover {
+  background: var(--hover-bg);
+  border-color: var(--accent-color);
+}
+
+.theme-btn.active, .effect-btn.active {
+  background: var(--accent-color);
+  color: var(--bg-primary);
+  border-color: var(--accent-color);
+  font-weight: bold;
 }
 
 section.add, #data {
@@ -46,9 +125,17 @@ input, button {
   box-sizing: border-box;
   padding: 6px;
   margin-bottom: 6px;
-  background: #0e1430;
-  color: #00f6ff;
-  border: 1px solid #00f6ff;
+  background: var(--bg-secondary);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  font-family: monospace;
+  transition: all 0.2s ease;
+}
+
+input:focus, button:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 246, 255, 0.4);
 }
 
 .row {
@@ -61,43 +148,81 @@ input, button {
 
 .row span {
   flex: 1;
+  color: var(--text-color);
 }
 
 button {
   cursor: pointer;
 }
 
+button:hover {
+  background: var(--hover-bg);
+}
+
 .category-title {
   font-weight: bold;
   margin-bottom: 4px;
+  color: var(--accent-color);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .action {
   cursor: pointer;
-  color: #00f6ff;
+  color: var(--accent-color);
   font-size: 12px;
   padding: 2px 6px;
-  border: 1px solid #00f6ff55;
+  border: 1px solid var(--border-color);
   border-radius: 3px;
+  transition: all 0.2s ease;
 }
 
 .action:hover {
-  background: #00f6ff22;
+  background: var(--hover-bg);
 }
 
 .delete {
-  color: #ff5555;
-  border-color: #ff555555;
+  color: var(--danger-color);
+  border-color: rgba(255, 85, 85, 0.33);
+}
+
+.delete:hover {
+  background: rgba(255, 85, 85, 0.15);
 }
 
 #log {
-  background: #0e1430;
+  background: var(--bg-secondary);
   padding: 10px;
   border-radius: 4px;
-  border: 1px solid #00f6ff55;
+  border: 1px solid var(--border-color);
   max-height: 200px;
   overflow-y: auto;
   font-size: 12px;
   white-space: pre-wrap;
   word-break: break-all;
+  color: var(--text-color);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border-color);
+  margin: 15px 0;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 400px) {
+  .container {
+    width: 95%;
+    margin: 10px auto;
+  }
+  
+  .theme-options, .effect-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .theme-btn, .effect-btn {
+    min-height: 32px;
+    font-size: 10px;
+  }
 }
