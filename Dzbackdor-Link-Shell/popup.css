@@ -1,9 +1,20 @@
+:root {
+  --bg-primary: #060914;
+  --bg-secondary: #0e1430;
+  --accent-color: #00f6ff;
+  --text-color: #00f6ff;
+  --success-color: #00ff00;
+  --danger-color: #ff5555;
+  --border-color: rgba(0, 246, 255, 0.33);
+  --hover-bg: rgba(0, 246, 255, 0.15);
+}
+
 body {
   margin: 0;
   padding: 10px;
   width: 340px;
-  background: #060914;
-  color: #00f6ff;
+  background: var(--bg-primary);
+  color: var(--text-color);
   font-family: monospace;
 }
 
@@ -14,16 +25,8 @@ header {
   margin-bottom: 12px;
 }
 
-h1 {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #00f6ff;
-  text-align: center;
-  text-shadow: 0 0 5px rgba(0, 246, 255, 0.7);
-  letter-spacing: 1px;
-}
+/* HAPUS SEMUA STYLE h1 DI SINI */
+/* Biarkan style h1 di file terpisah */
 
 .search-container {
   display: flex;
@@ -33,9 +36,9 @@ h1 {
 #search {
   flex: 1;
   padding: 6px;
-  background: #0e1430;
-  border: 1px solid #00f6ff;
-  color: #00f6ff;
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-color);
+  color: var(--text-color);
   border-radius: 3px;
   font-family: monospace;
 }
@@ -49,9 +52,9 @@ h1 {
 #settings {
   width: 32px;
   height: 32px;
-  background: #0e1430;
-  border: 1px solid #00f6ff;
-  color: #00f6ff;
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
   cursor: pointer;
   border-radius: 3px;
   display: flex;
@@ -62,8 +65,8 @@ h1 {
 }
 
 #settings:hover {
-  background: #00f6ff;
-  color: #060914;
+  background: var(--accent-color);
+  color: var(--bg-primary);
   transform: rotate(90deg);
 }
 
@@ -74,16 +77,17 @@ h1 {
 .category-title {
   cursor: pointer;
   padding: 6px 8px;
-  border-bottom: 1px solid #00f6ff55;
+  border-bottom: 1px solid var(--border-color);
   font-weight: bold;
   font-size: 14px;
   display: flex;
   align-items: center;
   transition: all 0.2s ease;
+  color: var(--accent-color);
 }
 
 .category-title:hover {
-  background: #00f6ff11;
+  background: var(--hover-bg);
 }
 
 .category-title::before {
@@ -91,6 +95,7 @@ h1 {
   font-size: 10px;
   margin-right: 6px;
   transition: transform 0.2s ease;
+  color: var(--accent-color);
 }
 
 .category.open .category-title::before {
@@ -100,7 +105,7 @@ h1 {
 .items {
   display: none;
   margin-left: 16px;
-  border-left: 1px solid #00f6ff33;
+  border-left: 1px solid var(--border-color);
   padding-left: 8px;
 }
 
@@ -118,29 +123,16 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--text-color);
 }
 
 .item:hover {
-  background: #00f6ff22;
+  background: var(--hover-bg);
 }
 
 .item .inline-toast {
-  color: #00ff00;
+  color: var(--success-color);
   font-size: 10px;
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-/* Animasi untuk judul */
-@keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 5px rgba(0, 246, 255, 0.7);
-  }
-  50% {
-    text-shadow: 0 0 10px rgba(0, 246, 255, 1), 0 0 20px rgba(0, 246, 255, 0.5);
-  }
-}
-
-h1 {
-  animation: glow 3s ease-in-out infinite;
 }
